@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Команда{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header">
+                <h1>Команды</h1>
+            </div>
+            <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Название команды</th>
+                            <th>Рейтинг</th>
+                            <th>Вид спорта</th>
+                            <th>Кол-во игроков в команде</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for team in Team_list %}
+                                <tr/>
+                                    <th>{{ team.TeamId }}</th>
+                                    <th>{{ team.team_name }}</th>
+                                    <th>{{team.rating  }}</th>
+                                    <th>{{ team.sport }}</th>
+                                    <th>{{  team.number_of_players }}</th>
+                                </tr>
+                            {% empty %}
+                                <li>пустой список</li>
+                            {% endfor %}
+                        </tbody>
+
+            </table>
+        </div>
+    </div>
+{% endblock %}

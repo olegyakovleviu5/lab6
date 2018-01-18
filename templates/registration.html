@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header">
+                <h1>Регистрация</h1>
+                    {% for error in errors %}
+                        <div><p class="text-warning">{{ error }}</p></div>
+                    {% endfor %}
+            </div>
+            <form method="POST" class="form-horizontal">{% csrf_token %}
+                <style>
+                    table { border-spacing: 1px; }/* Расстояние между ячейками */
+                    th { padding: 5px;  }/* Поля вокруг текста */
+                </style>
+{#                <div class="control-group">#}
+{#                    <label class="control-label" for="inputLastName">Фамилия</label>#}
+{#                    <div class="controls">#}
+{#                        <input type="text" name="last_name" id="inputLastName">#}
+{#                    </div>#}
+{#                </div>#}
+                <table>
+                    <tr>
+                        <label>
+                            <th>Фамилия:</th>
+                            <th><input type="text" name="last_name" placeholder="Фамилия"></th>
+                            <th></th>
+                        </label>
+                    </tr>
+                    <tr>
+                        <label>
+                            <th>Имя:</th>
+                            <th><input type="text" name="first_name"></th>
+                        </label>
+                    </tr>
+                    <tr>
+                        <label>
+                            <th>Email:</th>
+                            <th><input type="text" name="Email"></th>
+                        </label>
+                    </tr>
+                    <tr>
+                        <label>
+                            <th>&nbsp;Логин:</th>
+                            <th><input type="text" name="username"></th>
+                        </label>
+                    </tr>
+                    <tr>
+                        <label>
+                            <th>&nbsp;Пароль:</th>
+                            <th><input type="password" name="password"></th>
+                        </label>
+                    </tr>
+                    <tr>
+                        <label>
+                            <th>&nbsp;Повторите ввод:</th>
+                            <th><input type="password" name="password2"></th>
+                        </label>
+                    </tr>
+                </table>
+                </br>
+                <button type="submit">Зарегистрировать​</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{#                    &emsp;&emsp;&nbsp;&nbsp; &nbsp;#}
+{#                    #}
+{#                <br />#}
+{#                <label>#}
+{#                    &emsp;&emsp;&emsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;#}
+{#                    <input type="text" name="first_name">#}
+{#                </label><br />#}
+{#                <label>#}
+{#                    &emsp;&emsp;&emsp;&nbsp;&nbsp; &nbsp;&nbsp;  &thinsp; &thinsp;  Email:#}
+{#                    <input type="text" name="Email">#}
+{#                </label><br />#}
+{#                <label>#}
+{#                    &emsp;&emsp;&emsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Логин:#}
+{#                    <input type="text" name="username">#}
+{#                </label><br />#}
+{#                <label>#}
+{#                    &emsp;&emsp;&emsp;&emsp;&nbsp;Пароль:#}
+{#                    <input type="password" name="password">#}
+{#                </label><br />#}
+{#                <label>#}
+{#                    Повторите ввод:#}
+{#                    <input type="password" name="password2">#}
+{#                </label><br />&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;#}

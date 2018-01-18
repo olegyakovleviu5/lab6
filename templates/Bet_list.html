@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Ставки{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header">
+                <h1>Ставки</h1>
+            </div>
+            <ul class="list-group">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Фамилия пользователя</th>
+                        <th>Имя пользователя</th>
+                        <th>Название команды</th>
+                        <th>Дата</th>
+                        <th>Сумма</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for Bet in Bet_list %}
+                       <tr>
+                        <th>{{  Bet.user.first_name}}</th>
+                        <th>{{  Bet.user.last_name}}</th>
+                        <th>{{ Bet.team.team_name }}</th>
+                        <th>{{  Bet.date}}</th>
+                        <th>{{ Bet.amount }}</th>
+                      </tr>
+                    </tbody>
+                    {% empty %}
+                        <li>пустой список</li>
+                    {% endfor %}
+                </table>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

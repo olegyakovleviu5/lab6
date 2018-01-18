@@ -1,0 +1,10 @@
+<li class="list-group-item">
+    <a href="{% url 'users' element.UserId %}">
+        {{ element.first_name }}
+        {{ element.last_name}}
+        {{ element.phone }}
+        {{ element.email }}
+        {{ element.birthday }}
+        {{ element.passport }}
+    </a>
+</li>
